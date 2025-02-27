@@ -1,0 +1,154 @@
+/* 🚀 NOTIFICATION PAGE - STYLISH UI */
+
+.notification-container-page {
+    width: 50%;
+    margin: auto;
+    min-height: 90vh;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.notification-title {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background: linear-gradient(90deg, #050644, #247a82);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.notification-list {
+    margin-top: 20px;
+}
+
+.notification-card {
+    display: flex;    
+    align-items: center;
+    background: rgba(250, 6, 6, 0.1);
+    backdrop-filter: blur(10px);
+    padding: 15px;
+    border-radius: 10px;
+    gap: 10px;
+    margin-bottom: 10px;
+    border-left: 5px solid #050644;
+    transition: 0.3s;
+}
+.notification-card:hover {
+    transform: scale(1.05);
+    background: rgba(255, 0, 0, 0.15);
+    border-left-color: #ff0000;
+    box-shadow: 0 5px 15px rgba(255, 0, 0, 0.3);
+}
+
+.unread {
+    box-shadow: 0 0 15px rgba(255, 0, 255, 0.6);
+}
+
+.read {
+    opacity: 0.7;
+}
+
+.notif-icon {
+    flex-shrink: 0;
+}
+
+.notif-content {
+    width: 100%;
+    flex-grow: 0;
+    padding: 12px;
+    text-align: left;
+    cursor: pointer;
+    /* border: 2px solid red; */
+    & p{
+        color:#050644
+    }
+}
+.notif-content #noti{
+    margin: 0%;
+}
+.notif-time {
+    font-size: 0.8rem;
+    color: #050644;
+}
+
+.notif-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.mark-read,
+.delete {
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+    color:#050644
+}
+
+.mark-read:hover {
+    color: #189b0e;
+    text-decoration: 2px 2px 4px #14b009;
+}
+
+.delete:hover {
+    color: #de0b0b;
+}
+
+.no-notifications {
+    font-size: 1.2rem;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+@media screen and (max-width: 600px) {
+    .notification-container-page {
+        width: 90%;
+        padding: 20px;
+        min-height: 100vh;
+        margin-bottom: 60px;
+    }
+
+    .notification-title {
+        font-size: 1.5rem;
+        gap: 6px;
+        text-align: center;
+    }
+
+    .notification-card {
+        flex-direction: row;
+        align-items: center;
+        padding: 12px;
+        gap: 8px;
+        border-left-width: 3px;
+    }
+    .notification-card:hover {
+        
+    }
+
+    .notif-content p {
+        font-size: 0.9rem;
+        margin: 0px;
+      
+    }
+
+    .notif-time {
+        font-size: 0.75rem;
+    }
+
+    .notif-actions {
+        justify-content: flex-end;
+        gap: 8px;
+    }
+
+    .mark-read,
+    .delete {
+        font-size: 0.9rem;
+        padding: 4px 6px;
+    }
+
+    .no-notifications {
+        font-size: 1rem;
+    }
+}

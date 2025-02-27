@@ -1,0 +1,187 @@
+/* Activity Log Page - Stylish and Responsive */
+
+/* Activity Container */
+.activity-container {
+    width: 50%;
+    min-height: 100vh;
+    /* background: rgba(255, 255, 255, 0.1); */
+    border-radius: 15px;
+    padding: 20px;
+    /* box-shadow: 0 10px 30px rgba(0, 255, 255, 0.2); */
+    backdrop-filter: blur(15px);
+    /* border: 1px solid rgba(255, 255, 255, 0.2); */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin: auto;
+    margin-bottom: 0px;
+}
+
+/* .activity-container:hover {
+    transform: scale(1.02);
+    box-shadow: 0 10px 40px rgba(0, 255, 255, 0.4);
+} */
+
+/* Title */
+.activity-title {
+    text-align: center;
+    font-size: 40px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    background: linear-gradient(135deg, #1e087e, #a024d1);
+    /* bo-shadow: 0 0 4px #FFEB3B; */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
+
+/* Activity List */
+.activity-list {
+    list-style: none;
+    padding: 0;
+}
+
+/* Activity Item */
+.activity-item {
+    display: flex;
+    align-items: center;
+    background: rgba(11, 7, 82, 0.8);
+    padding: 15px;
+    border-radius: 12px;
+    margin: 10px 0;
+    box-shadow: 0 0px 10px rgba(0, 255, 255, 0.5);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.activity-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 0px 8px rgba(37, 17, 117, 0.8);
+}
+
+/* Icons */
+.icon {
+    padding: 0px;
+    border-radius: 50%;
+    margin-right: 15px;
+    font-size: 25px;
+    color: rebeccapurple;
+}
+
+/* Custom Colors for Icons */
+.icon .liked {
+    color: #ff0064;
+    background: rgba(255, 0, 100, 0.1);
+}
+
+.icon .created {
+    color: #00ff9d;
+    background: rgba(0, 255, 157, 0.1);
+}
+
+.icon .followed {
+    color: #007bff;
+    background: rgba(0, 123, 255, 0.1);
+}
+
+/* Activity Details */
+.activity-details {
+    flex-grow: 1;
+}
+
+.activity-details p {
+    margin: 0;
+    font-size: 16px;
+}
+
+.timestamp {
+    display: block;
+    font-size: 12px;
+    color: #e9f502;
+    margin-top: 5px;
+}
+
+.icon {
+    margin-right: 10px;
+    /* Space between icon and text */
+}
+
+.icon.created {
+    color: #4CAF50;
+}
+
+/* Green for created post */
+.icon.liked {
+    color: #df1558;
+}
+
+/* Pink for liked post */
+.icon.saved {
+    color: #e507c4;
+}
+
+/* Yellow for saved post */
+.icon.shared {
+    color: #af0d13;
+}
+
+/* Blue for shared post */
+.icon.commented {
+    color: #FF5722;
+}
+
+/* Orange for commented post */
+.icon.follow-request {
+    color: #FF9800;
+}
+
+/* Orange for follow request */
+.icon.follow-accepted {
+    color: #4CAF50;
+}
+
+/* Green for accepted follow */
+.icon.follow-rejected {
+    color: #F44336;
+}
+
+/* Red for rejected follow */
+.icon.searched {
+    color: #fbfbf8;
+}
+
+
+@media (max-width: 600px) {
+    .activity-container {
+        width: 100%;
+        padding: 15px;
+        border-radius: 0px;
+        margin-bottom: 60px;
+    }
+
+    .activity-title {
+        font-size: 1.8rem;
+        margin-bottom: 15px;
+        letter-spacing: 1px;
+    }
+
+    .activity-item {
+        flex-direction: row;
+        align-items: flex-start;
+        padding: 12px;
+        border-radius: 10px;
+        gap: 8px;
+    }
+
+    .icon {
+        font-size: 22px;
+        margin-right: 0;
+        margin-bottom: 5px;
+    }
+
+    .activity-details p {
+        font-size: 14px;
+    }
+
+    .timestamp {
+        font-size: 11px;
+    }
+}

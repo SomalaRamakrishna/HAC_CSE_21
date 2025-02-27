@@ -1,0 +1,102 @@
+.leaderboard-container {
+    background: none;
+    color: white;
+    max-width: 800px;
+    min-height: 100vh;
+    margin: 20px auto;
+    margin-bottom: 0%;
+    padding: 20px;
+    border-radius: 12px;
+    
+    text-align: center;
+}
+
+.leaderboard-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    
+}
+
+.leaderboard-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: rgba(0, 0, 255, 0.34);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.leaderboard-table th,
+.leaderboard-table td {
+    padding: 12px;
+    
+    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.leaderboard-table th {
+    
+    background: rgba(255, 255, 255, 0.2);
+    background-color: rgb(143, 143, 148);
+    font-weight: bold;
+}
+
+.leaderboard-table tr:hover {
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.profile-pic {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 2px solid white;
+}
+
+.top-rank0{
+    background: linear-gradient(to right, gold, orange);
+    color: black;
+    font-weight: bold;
+}
+.top-rank1 {
+    background: linear-gradient(to right, orange, rgb(9, 179, 26));
+    color: black;
+    font-weight: bold;
+}
+.top-rank2 {
+    background: linear-gradient(to right, rgb(9, 179, 26),powderblue);
+    color: black;
+    font-weight: bold;
+}
+
+@media screen and (max-width: 600px) {
+    .leaderboard-container {
+        max-width: 92%;
+        min-height: auto;
+        padding: 15px;
+        margin: 10px auto;
+        margin-bottom: 65px;
+    }
+
+    .leaderboard-title {
+        font-size: 20px;
+        margin-bottom: 10px;
+    }
+
+    .leaderboard-table th,
+    .leaderboard-table td {
+        padding: 8px;
+        font-size: 14px;
+    }
+
+    .profile-pic {
+        width: 30px;
+        height: 30px;
+    }
+
+    .leaderboard-table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+}
