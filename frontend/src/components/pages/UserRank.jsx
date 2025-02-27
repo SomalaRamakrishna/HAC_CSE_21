@@ -10,7 +10,7 @@ const UserRank = ({ userId }) => {
   useEffect(() => {
     const fetchUserRank = async () => {
       try {
-        const { data } = await axios.get("http://localhost:5000/api/rankings/");
+        const { data } = await axios.get("https://hackthon-cse-25.onrender.com/api/rankings/");
         console.log(data);
         // Find the rank of the specific user
         const userRank = data.findIndex(user => user.userId === userId) + 1;

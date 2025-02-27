@@ -13,7 +13,7 @@ const SavedPosts = () => {
     const fetchSavedPosts = async () => {
       try {
         setLoading(true);
-        const response = await axios.get("http://localhost:5000/api/posts/user/saved-posts", {
+        const response = await axios.get("https://hackthon-cse-25.onrender.com/api/posts/user/saved-posts", {
           headers: { Authorization: `Bearer ${token}` },
         });
         /* console.log("response:::",response.data); */ 

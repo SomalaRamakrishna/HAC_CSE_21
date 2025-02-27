@@ -53,7 +53,7 @@ const UpdateProfile = () => {
     const userId=localStorage.getItem("user");
     try {
       setLoading(true);
-      const response = await axios.put("http://localhost:5000/api/users/updateprofile", formData, {
+      const response = await axios.put("https://hackthon-cse-25.onrender.com/api/users/updateprofile", formData, {
         headers: {
           Authorization: `Bearer ${localStorage.getItem("token")}`,
           "Content-Type": "multipart/form-data",
@@ -100,7 +100,7 @@ const handleAlumniPayment = async () => {
 
     // Fetch order details from the backend
     const { data } = await axios.post(
-      "http://localhost:5000/api/payment",
+      "https://hackthon-cse-25.onrender.com/api/payment",
       { amount: 2 }, // Amount in INR
       {
         headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
@@ -115,7 +115,7 @@ const handleAlumniPayment = async () => {
       order_id: data.id,
       handler: async (response) => {
           // Step 3: Verify Payment
-          const verifyRes = await axios.post("http://localhost:5000/api/payment/verify-payment", {
+          const verifyRes = await axios.post("https://hackthon-cse-25.onrender.com/api/payment/verify-payment", {
             razorpay_order_id: response.razorpay_order_id,
             razorpay_payment_id: response.razorpay_payment_id,
             razorpay_signature: response.razorpay_signature,
@@ -167,7 +167,7 @@ const handlePaymentSuccess=async()=>{
     const userId=localStorage.getItem("user");
     try {
       setLoading(true);
-      const response = await axios.put("http://localhost:5000/api/users/updateprofile", formData, {
+      const response = await axios.put("https://hackthon-cse-25.onrender.com/api/users/updateprofile", formData, {
         headers: {
           Authorization: `Bearer ${localStorage.getItem("token")}`,
           "Content-Type": "multipart/form-data",

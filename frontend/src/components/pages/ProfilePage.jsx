@@ -19,7 +19,7 @@ const ProfilePage = () => {
     try {
       console.log("id:",id);
       const { data } = await axios.get(
-        `http://localhost:5000/api/users/${id}`,
+        `https://hackthon-cse-25.onrender.com/api/users/${id}`,
         {
           headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
         }
@@ -35,7 +35,7 @@ const ProfilePage = () => {
   const checkFollowStatus = async () => {
     try {
       const { data } = await axios.get(
-        `http://localhost:5000/api/follow/${id}/is-followed`,
+        `https://hackthon-cse-25.onrender.com/api/follow/${id}/is-followed`,
         {
           headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
         }
@@ -56,7 +56,7 @@ const ProfilePage = () => {
   const sendFollowRequest = async () => {
     try {
       const { data } = await axios.post(
-        `http://localhost:5000/api/follow/send-follow`,
+        `https://hackthon-cse-25.onrender.com/api/follow/send-follow`,
         { followerId: currentUserId, followingId: id },
         { headers: { Authorization: `Bearer ${localStorage.getItem("token")}` } }
       );
@@ -72,7 +72,7 @@ const ProfilePage = () => {
    const handleDeleteAccount = async () => {
     if (window.confirm("Are you sure you want to delete your account? This action cannot be undone.")) {
       try {
-        await axios.delete("http://localhost:5000/api/users/delete-account", {
+        await axios.delete("https://hackthon-cse-25.onrender.com/api/users/delete-account", {
           headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
         });
 

@@ -11,7 +11,7 @@ const Sidebar = ({ setActiveChat,isMobile,setIsShow }) => {
   useEffect(() => {
     const fetchChats = async () => {
       try {
-        const response = await axios.get("http://localhost:5000/api/users/connections", {
+        const response = await axios.get("https://hackthon-cse-25.onrender.com/api/users/connections", {
           headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
         });
          // Sort chats by `updatedAt` (recent messages first)
@@ -40,7 +40,7 @@ const Sidebar = ({ setActiveChat,isMobile,setIsShow }) => {
   const startChat = async (userId) => {
     try {
       const response = await axios.post(
-        "http://localhost:5000/api/chats",
+        "https://hackthon-cse-25.onrender.com/api/chats",
         { userId },
         { headers: { Authorization: `Bearer ${localStorage.getItem("token")}` } }
       );
@@ -48,7 +48,7 @@ const Sidebar = ({ setActiveChat,isMobile,setIsShow }) => {
       setActiveChat(response.data);
 
       // Reset unread count
-      await axios.put(`http://localhost:5000/api/messages/reset-unread/${response.data._id}`, {}, {
+      await axios.put(`https://hackthon-cse-25.onrender.com/api/messages/reset-unread/${response.data._id}`, {}, {
         headers: { Authorization: `Bearer ${localStorage.getItem("token")}` }
       });
 

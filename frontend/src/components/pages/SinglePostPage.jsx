@@ -24,7 +24,7 @@ const [comments, setComments] = useState([]);
 
 const fetchPost = async () => {
       try {
-        const response = await axios.get(`http://localhost:5000/api/posts/${postId}`,{
+        const response = await axios.get(`https://hackthon-cse-25.onrender.com/api/posts/${postId}`,{
         headers: {
           Authorization: `Bearer ${localStorage.getItem("token")}`,
         },
@@ -48,7 +48,7 @@ const fetchPost = async () => {
   const handleLikes = async (id) => {
       
     try {
-      const { data } = await axios.post(`http://localhost:5000/api/likes/post/${id}`, [],{
+      const { data } = await axios.post(`https://hackthon-cse-25.onrender.com/api/likes/post/${id}`, [],{
         headers: {
           Authorization: `Bearer ${localStorage.getItem("token")}`,
         },
@@ -67,7 +67,7 @@ const fetchPost = async () => {
   };
   const fetchComments = async () => {
     try {
-      const response = await axios.get(`http://localhost:5000/api/comments/post/${postId}`, {
+      const response = await axios.get(`https://hackthon-cse-25.onrender.com/api/comments/post/${postId}`, {
           headers: {
             Authorization: `Bearer ${localStorage.getItem("token")}`,
           },
@@ -86,7 +86,7 @@ const handleCommentSubmit = async (e) => {
     e.preventDefault();
     if (!newComment.trim()) return;
     try {
-      const response = await axios.post(`http://localhost:5000/api/comments/post/${postId}`,{ text: newComment },
+      const response = await axios.post(`https://hackthon-cse-25.onrender.com/api/comments/post/${postId}`,{ text: newComment },
         { headers: { 
           Authorization: `Bearer ${localStorage.getItem("token")}`,
           },
@@ -102,7 +102,7 @@ const handleCommentSubmit = async (e) => {
    
 const fetchLikes = async () => {
      try {
-      const response = await axios.get(`http://localhost:5000/api/likes/post/${postId}`, {
+      const response = await axios.get(`https://hackthon-cse-25.onrender.com/api/likes/post/${postId}`, {
         headers: {
           Authorization: `Bearer ${localStorage.getItem("token")}`,
         },
@@ -122,7 +122,7 @@ const fetchLikes = async () => {
   const handleShare = async () => {
     try {
        /* console.log("entered") */
-      await axios.post(`http://localhost:5000/api/posts/share/${postId}`, null, {
+      await axios.post(`https://hackthon-cse-25.onrender.com/api/posts/share/${postId}`, null, {
         headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
       });
          
@@ -143,7 +143,7 @@ const shareOnWhatsApp = () => {
 const handleSave = async () => {
   try {
        console.log("entered");
-    const response = await axios.post(`http://localhost:5000/api/posts/save/${postId}`, null, {
+    const response = await axios.post(`https://hackthon-cse-25.onrender.com/api/posts/save/${postId}`, null, {
       headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
     });
     
@@ -156,7 +156,7 @@ const handleSave = async () => {
 // Fetch saved status when component mounts
 const checkSavedStatus = async () => {
       try {
-        const response = await axios.get(`http://localhost:5000/api/posts/check-save/${postId}`, {
+        const response = await axios.get(`https://hackthon-cse-25.onrender.com/api/posts/check-save/${postId}`, {
           headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
         });
         setSaved(response.data.isSaved);
@@ -166,7 +166,7 @@ const checkSavedStatus = async () => {
     };
 const checkLikeStatus = async () => {
   try {
-    const response = await axios.get(`http://localhost:5000/api/likes/check-like/${postId}`, {
+    const response = await axios.get(`https://hackthon-cse-25.onrender.com/api/likes/check-like/${postId}`, {
       headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
     });
     setLike(response.data.isLiked);

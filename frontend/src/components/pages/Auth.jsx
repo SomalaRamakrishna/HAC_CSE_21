@@ -25,7 +25,7 @@ const Auth = () => {
       const idToken = credentialResponse.credential; // Get the ID token
       try {
         setLoading(true);
-        const response = await fetch('http://localhost:5000/api/users/google', { 
+        const response = await fetch('https://hackthon-cse-25.onrender.com/api/users/google', { 
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
@@ -66,7 +66,7 @@ const Auth = () => {
     if (type === "login") {
       try {
         setLoading(true);
-        const { data } = await axios.post(`http://localhost:5000/api/users/login`, {
+        const { data } = await axios.post(`https://hackthon-cse-25.onrender.com/api/users/login`, {
           collegeEmail,
           password,
         });
@@ -93,7 +93,7 @@ const Auth = () => {
 
       try {
         setLoading(true);
-        await axios.post(`http://localhost:5000/api/users/register`, {
+        await axios.post(`https://hackthon-cse-25.onrender.com/api/users/register`, {
           collegeEmail,
           name,
           password,

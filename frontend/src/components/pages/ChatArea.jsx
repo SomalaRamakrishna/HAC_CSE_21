@@ -23,14 +23,14 @@ const ChatArea = ({ activeChat, setActiveChat ,isMobile,setIsShow}) => {
       localStorage.setItem("activeChat", JSON.stringify(activeChat));
      setLoading(true);
       axios
-        .get(`http://localhost:5000/api/messages/${activeChat._id}`, {
+        .get(`https://hackthon-cse-25.onrender.com/api/messages/${activeChat._id}`, {
           headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
         })
         .then((res) => setMessages(res.data))
         .catch((err) => console.error("Error fetching messages:", err));
 
       // Reset unread messages count
-      axios.put(`http://localhost:5000/api/messages/reset-unread/${activeChat._id}`, {}, {
+      axios.put(`https://hackthon-cse-25.onrender.com/api/messages/reset-unread/${activeChat._id}`, {}, {
         headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
       });
       setLoading(false)
@@ -42,7 +42,7 @@ const ChatArea = ({ activeChat, setActiveChat ,isMobile,setIsShow}) => {
       try {
         setLoading(true);
         const response = await axios.post(
-          "http://localhost:5000/api/messages",
+          "https://hackthon-cse-25.onrender.com/api/messages",
           { chatId: activeChat._id, content: newMessage },
           { headers: { Authorization: `Bearer ${localStorage.getItem("token")}` } }
         );

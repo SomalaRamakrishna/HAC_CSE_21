@@ -21,7 +21,7 @@ const [previousPostIds, setPreviousPostIds] = useState([]); // Track previous po
 const fetchPosts = async () => {
 
   try {
-    const { data } = await axios.get(`http://localhost:5000/api/posts?page=${page}&previousPosts=${previousPostIds.join(",")}`, {
+    const { data } = await axios.get(`https://hackthon-cse-25.onrender.com/api/posts?page=${page}&previousPosts=${previousPostIds.join(",")}`, {
       headers: {
         Authorization: `Bearer ${localStorage.getItem("token")}`,
       },
@@ -63,7 +63,7 @@ useEffect(() => {
         return;
       }
        /* setLoading(true); */
-      const { data } = await axios.get(`http://localhost:5000/api/users/${userId}`, {
+      const { data } = await axios.get(`https://hackthon-cse-25.onrender.com/api/users/${userId}`, {
         headers: {
           Authorization: `Bearer ${localStorage.getItem("token")}`,
         },
@@ -87,7 +87,7 @@ useEffect(() => {
 useEffect(() => {
     const fetchRankings = async () => {
       try {
-        const { data } = await axios.get("http://localhost:5000/api/rankings/", {
+        const { data } = await axios.get("https://hackthon-cse-25.onrender.com/api/rankings/", {
         headers: {
           Authorization: `Bearer ${localStorage.getItem("token")}`,
         },
@@ -103,7 +103,7 @@ useEffect(() => {
 useEffect(() => {
    const fetchTrendingTopics = async () => {
   try {
-    const response = await axios.get("http://localhost:5000/api/users/trending/topic", {
+    const response = await axios.get("https://hackthon-cse-25.onrender.com/api/users/trending/topic", {
       headers: {
         Authorization: `Bearer ${localStorage.getItem("token")}`,
       },

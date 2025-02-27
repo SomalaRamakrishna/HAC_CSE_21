@@ -31,7 +31,7 @@ const CreatePost = () => {
     });
     setLoading(true);
     try {
-      const { data } = await axios.post("http://localhost:5000/api/posts/", formData, {
+      const { data } = await axios.post("https://hackthon-cse-25.onrender.com/api/posts/", formData, {
         headers: {
           Authorization: `Bearer ${localStorage.getItem("token")}`
         },
@@ -70,7 +70,7 @@ const CreatePost = () => {
         if (!postContent.trim()) return;
 
         try {
-            const response = await axios.post("http://localhost:5000/api/posts/sentiment/analyze", { postContent },{
+            const response = await axios.post("https://hackthon-cse-25.onrender.com/api/posts/sentiment/analyze", { postContent },{
               headers: {
                       Authorization: `Bearer ${localStorage.getItem("token")}`
               },

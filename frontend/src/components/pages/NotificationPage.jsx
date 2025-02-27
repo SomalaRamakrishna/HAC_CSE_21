@@ -20,7 +20,7 @@ const NotificationPage = () => {
 
   const fetchNotifications = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/api/notifications", {
+      const res = await axios.get("https://hackthon-cse-25.onrender.com/api/notifications", {
         headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
       });
       setNotifications(res.data);
@@ -36,7 +36,7 @@ const NotificationPage = () => {
   const markAsRead = async (id) => {
     try {
       await axios.patch(
-        `http://localhost:5000/api/notifications/${id}`,
+        `https://hackthon-cse-25.onrender.com/api/notifications/${id}`,
         {},
         { headers: { Authorization: `Bearer ${localStorage.getItem("token")}` } }
       );
@@ -51,7 +51,7 @@ const NotificationPage = () => {
 
   const deleteNotification = async (id) => {
     try {
-      await axios.delete(`http://localhost:5000/api/notifications/${id}`, {
+      await axios.delete(`https://hackthon-cse-25.onrender.com/api/notifications/${id}`, {
         headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
       });
       setNotifications(notifications.filter(n => n._id !== id));

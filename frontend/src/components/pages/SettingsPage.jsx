@@ -22,7 +22,7 @@ useEffect(() => {
         return;
       }
        
-      const { data } = await axios.get(`http://localhost:5000/api/users/${userId}`, {
+      const { data } = await axios.get(`https://hackthon-cse-25.onrender.com/api/users/${userId}`, {
         headers: {
           Authorization: `Bearer ${localStorage.getItem("token")}`,
         },

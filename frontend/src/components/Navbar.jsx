@@ -45,7 +45,7 @@ const Navbar = () => {
  useEffect(() => {
    const fetchUnreadCount = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/api/notifications", {
+      const res = await axios.get("https://hackthon-cse-25.onrender.com/api/notifications", {
         headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
       });
       const unread = res.data.filter(n => !n.read).length; // Count unread notifications
@@ -82,7 +82,7 @@ const Navbar = () => {
         return;
       }
        
-      const { data } = await axios.get(`http://localhost:5000/api/users/${userIdlog}`, {
+      const { data } = await axios.get(`https://hackthon-cse-25.onrender.com/api/users/${userIdlog}`, {
         headers: {
           Authorization: `Bearer ${localStorage.getItem("token")}`,
         },

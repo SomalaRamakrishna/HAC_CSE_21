@@ -8,7 +8,7 @@ const Leaderboard = () => {
   useEffect(() => {
     const fetchRankings = async () => {
       try {
-        const { data } = await axios.get("http://localhost:5000/api/rankings/");
+        const { data } = await axios.get("https://hackthon-cse-25.onrender.com/api/rankings/");
         setRankedUsers(data);
       } catch (error) {
         console.error("Error fetching rankings:", error);

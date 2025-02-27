@@ -27,7 +27,7 @@ const SearchPage = () => {
 
     try {
       const response = await axios.get(
-        `http://localhost:5000/api/search?query=${searchQuery}&type=${filters}`,
+        `https://hackthon-cse-25.onrender.com/api/search?query=${searchQuery}&type=${filters}`,
         {
           headers: {
             Authorization: `Bearer ${localStorage.getItem("token")}`,

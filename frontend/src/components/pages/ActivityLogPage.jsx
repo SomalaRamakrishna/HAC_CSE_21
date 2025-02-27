@@ -13,7 +13,7 @@ const ActivityLogPage = () => {
     const fetchActivityLogs = async () => {
       try {
         setLoading(true);
-        const res = await axios.get("http://localhost:5000/api/logs/activity", {
+        const res = await axios.get("https://hackthon-cse-25.onrender.com/api/logs/activity", {
           headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
         });
 

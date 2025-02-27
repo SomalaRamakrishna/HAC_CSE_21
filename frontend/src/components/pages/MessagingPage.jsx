@@ -4,7 +4,7 @@ import ChatArea from "./ChatArea";
 import "./MessagingPage.css";
   const fetchChats = async () => {
       try {
-        const response = await axios.get("http://localhost:5000/api/users/connections", {
+        const response = await axios.get("https://hackthon-cse-25.onrender.com/api/users/connections", {
           headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
         });
 

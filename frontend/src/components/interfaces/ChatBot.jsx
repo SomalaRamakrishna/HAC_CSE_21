@@ -29,7 +29,7 @@ const Chatbot = () => {
 
     try {
       const response = await axios.post(
-        "http://localhost:5000/api/users/chatbot",
+        "https://hackthon-cse-25.onrender.com/api/users/chatbot",
         { message: input },
         { headers: { Authorization: `Bearer ${token}` } }
       );

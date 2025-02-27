@@ -20,13 +20,13 @@ const FollowPage = () => {
     try {
       setLoading(true);
       const [followersRes, followingRes, requestsRes] = await Promise.all([
-        axios.get(`http://localhost:5000/api/follow/${id}/followers`, {
+        axios.get(`https://hackthon-cse-25.onrender.com/api/follow/${id}/followers`, {
           headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
         }),
-        axios.get(`http://localhost:5000/api/follow/${id}/following`, {
+        axios.get(`https://hackthon-cse-25.onrender.com/api/follow/${id}/following`, {
           headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
         }), 
-        axios.get(`http://localhost:5000/api/follow/${id}/follow-requests`, {
+        axios.get(`https://hackthon-cse-25.onrender.com/api/follow/${id}/follow-requests`, {
           headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
         }),
       ]);
@@ -44,7 +44,7 @@ const FollowPage = () => {
     try {
       setLoading(true);
       await axios.put(
-        `http://localhost:5000/api/follow/accept-follow/${requestId}`,
+        `https://hackthon-cse-25.onrender.com/api/follow/accept-follow/${requestId}`,
         {},
         { headers: { Authorization: `Bearer ${localStorage.getItem("token")}` } }
       );
@@ -60,7 +60,7 @@ const FollowPage = () => {
     try {
       setLoading(true);
       await axios.put(
-        `http://localhost:5000/api/follow/reject-follow/${requestId}`,
+        `https://hackthon-cse-25.onrender.com/api/follow/reject-follow/${requestId}`,
         {},
         { headers: { Authorization: `Bearer ${localStorage.getItem("token")}` } }
       );
